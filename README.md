@@ -34,3 +34,18 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Variables de Entorno
+
+El proyecto está configurado para manejar distintas variables de entorno según la etapa de desarrollo:
+
+- **Desarrollo (`.env.development`)**: Contiene las variables usadas al ejecutar `npm run dev`.
+- **Producción (`.env.production`)**: Contiene las variables usadas al compilar con `npm run build` o ejecutar producción.
+- **Ejemplo (`.env.example`)**: Plantilla de referencia para saber qué variables son necesarias.
+
+### Configuración local (Recomendado)
+Para variables locales que no deban subirse a Git (credenciales sensibles, API keys privadas, etc.), crea un archivo `.env.local` en la raíz (este archivo está ignorado en `.gitignore`):
+```bash
+cp .env.example .env.local
+```
+

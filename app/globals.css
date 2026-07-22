@@ -1,26 +1,126 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
+@theme {
+  --color-brand: #00f076;
+  --color-brand-hover: #00c762;
+  --color-brand-glow: rgba(0, 240, 118, 0.15);
+  --color-gold: #fbbf24;
+  --color-gold-glow: rgba(251, 191, 36, 0.15);
+  --color-purple-exotic: #d946ef;
+  
+  /* Sistema de Color Mapeado a Variables CSS */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-card-border-hover: var(--card-border-hover);
+  
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* Animaciones 2026 */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgba(0, 240, 118, 0.2), 0 0 20px rgba(0, 240, 118, 0.1);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(0, 240, 118, 0.4), 0 0 30px rgba(0, 240, 118, 0.2);
   }
 }
 
-body {
+/* Variables del Sistema de Temas (Claro / Oscuro) */
+:root {
+  /* Modo Claro (Boutique Verde Salvia) */
+  --background: #f6fcf8;
+  --foreground: #0c120e;
+  --card-bg: rgba(255, 255, 255, 0.65);
+  --card-border: rgba(16, 185, 129, 0.08);
+  --card-border-hover: rgba(0, 220, 108, 0.25);
+  --muted: #4b5563;
+  --muted-foreground: #6b7280;
+  
+  --glass-bg: rgba(246, 252, 248, 0.85);
+  --glass-border: rgba(16, 185, 129, 0.06);
+  --deep-bg-gradient: radial-gradient(circle at top left, rgba(16, 185, 129, 0.07), transparent 45%),
+                      radial-gradient(circle at bottom right, rgba(217, 70, 239, 0.03), transparent 45%),
+                      #f6fcf8;
+}
+
+.dark {
+  /* Modo Oscuro (Obsidiana Esmeralda - Suavizado y Enriquecido) */
+  --background: #0b120f;
+  --foreground: #f2f7f4;
+  --card-bg: rgba(10, 18, 13, 0.65);
+  --card-border: rgba(16, 185, 129, 0.12);
+  --card-border-hover: rgba(0, 240, 118, 0.3);
+  --muted: #64748b;
+  --muted-foreground: #94a3b8;
+  
+  --glass-bg: rgba(11, 18, 15, 0.78);
+  --glass-border: rgba(0, 0, 0, 0.35);
+  --deep-bg-gradient: radial-gradient(circle at top left, rgba(0, 240, 118, 0.13), transparent 45%),
+                      radial-gradient(circle at bottom right, rgba(217, 70, 239, 0.08), transparent 45%),
+                      #0a100d;
+}
+
+/* Scrollbar Moderno */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 240, 118, 0.4);
+}
+
+/* Clases de Utilidad de Vidrio Esmerilado (Glassmorphism) */
+.glass {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+}
+
+.glass-navbar {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.glow-green {
+  box-shadow: 0 0 40px -10px rgba(0, 240, 118, 0.15);
+}
+
+.glow-gold {
+  box-shadow: 0 0 40px -10px rgba(251, 191, 36, 0.15);
+}
+
+/* Estilo global de body */
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  overflow-x: hidden;
+}
+
+/* Degradados Exóticos 2026 */
+.bg-gradient-premium {
+  background: var(--deep-bg-gradient);
 }
