@@ -44,11 +44,12 @@ export function Navbar() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-          isScrolled ? "glass-navbar py-4 shadow-xl shadow-black/10" : "bg-transparent py-6"
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-300 flex flex-col",
+          isScrolled ? "glass-navbar shadow-xl shadow-black/10" : "bg-transparent"
         )}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 sm:px-8">
+        <div className={cn("w-full transition-all duration-300", isScrolled ? "py-4" : "py-6")}>
+          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 sm:px-8">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
             <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 border border-brand/20 transition-colors group-hover:bg-brand/20">
@@ -157,6 +158,17 @@ export function Navbar() {
                 {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </button>
             )}
+          </div>
+        </div>
+      </div>
+
+        {/* Barra de Advertencia Legal en la parte inferior del Header */}
+        <div className="w-full bg-red-950/45 border-t border-b border-red-500/10 py-1.5 px-6 text-center backdrop-blur-md">
+          <div className="max-w-7xl mx-auto flex items-center justify-center space-x-2 text-[8px] sm:text-[9px] font-black text-red-400 tracking-widest uppercase">
+            <span className="bg-red-500 text-black text-[7px] font-black px-1.5 py-0.5 rounded-sm select-none shrink-0">
+              +18 ADVERTENCIA
+            </span>
+            <span className="truncate sm:whitespace-normal">PRODUCTO EXCLUSIVO PARA MAYORES DE EDAD. EL CONSUMO DE CANNABIS EN MENORES DE EDAD PUEDE AFECTAR SU DESARROLLO.</span>
           </div>
         </div>
       </header>

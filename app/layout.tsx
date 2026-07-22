@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { CartDrawer } from "@/features/cart/components/cart-drawer";
+import { AgeGate } from "@/components/layout/age-gate";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +37,8 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <CartDrawer />
+        <AgeGate />
       </body>
     </html>
   );

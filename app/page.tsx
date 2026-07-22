@@ -6,10 +6,9 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { PromoBanner } from "@/features/products/components/promo-banner";
 import { ProductGrid } from "@/features/products/components/product-grid";
-import { CartDrawer } from "@/features/cart/components/cart-drawer";
-import { ComplianceBadges } from "@/components/layout/compliance-badges";
 import { useCartStore } from "@/lib/store/useCartStore";
 import { useProductStore } from "@/lib/store/useProductStore";
+import { ComplianceBadges } from "@/components/layout/compliance-badges";
 
 export default function Home() {
   const products = useProductStore((state) => state.products);
@@ -203,9 +202,6 @@ export default function Home() {
 
       {/* 3. CATÁLOGO DE PRODUCTOS (FILTROS Y GRILLA) */}
       <ProductGrid />
-
-      {/* Carrito Lateral Desplegable */}
-      <CartDrawer />
     </div>
   );
 }
