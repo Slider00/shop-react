@@ -52,7 +52,7 @@ export function Navbar() {
           <div className="mx-auto flex max-w-7xl items-center justify-between px-6 sm:px-8">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 border border-brand/20 transition-colors group-hover:bg-brand/20">
+            <div className="relative hidden sm:flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 border border-brand/20 transition-colors group-hover:bg-brand/20">
               <Leaf className="h-5 w-5 text-brand" />
               <div className="absolute inset-0 -z-10 rounded-xl bg-brand/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
@@ -93,19 +93,7 @@ export function Navbar() {
               <span>Verificado +18</span>
             </div>
 
-            {/* Botón Alternar Tema */}
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={toggleTheme}
-              className="h-10 w-10 rounded-full border-emerald-500/10 hover:border-brand/35 bg-card-bg hover:bg-emerald-950/20 p-0 flex items-center justify-center cursor-pointer"
-            >
-              {mounted && theme === "dark" ? (
-                <Sun className="h-4.5 w-4.5 text-foreground hover:text-brand transition-colors animate-pulse" />
-              ) : (
-                <Moon className="h-4.5 w-4.5 text-foreground hover:text-brand transition-colors" />
-              )}
-            </Button>
+
 
             {/* Bandera de Colombia 🇨🇴 */}
             <div className="flex items-center space-x-1.5 px-2 sm:px-2.5 py-1.5 rounded-full border border-emerald-500/10 bg-card-bg hover:border-brand/25 transition-all select-none shrink-0">
