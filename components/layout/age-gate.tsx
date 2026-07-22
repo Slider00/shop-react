@@ -36,22 +36,11 @@ export function AgeGate() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[9999] flex items-center justify-center px-6 overflow-hidden"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 backdrop-blur-2xl px-6"
         >
-          {/* Video de Fondo: shopweed.mp4 en bucle */}
-          <div className="absolute inset-0 -z-10 w-full h-full overflow-hidden">
-            <video 
-              autoPlay 
-              loop 
-              muted 
-              playsInline
-              className="w-full h-full object-cover scale-105 pointer-events-none select-none opacity-85 dark:opacity-70"
-            >
-              <source src="/shopweed.mp4" type="video/mp4" />
-            </video>
-            {/* Capa de vidrio esmerilado oscura para legibilidad y elegancia */}
-            <div className="absolute inset-0 bg-[#011a14]/65 dark:bg-black/75 backdrop-blur-[5px]" />
-          </div>
+          {/* Luces de fondo decorativas */}
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-[400px] w-[400px] rounded-full bg-brand/5 blur-[120px] pointer-events-none" />
+          <div className="absolute bottom-10 right-10 -z-10 h-[300px] w-[300px] rounded-full bg-purple-exotic/5 blur-[100px] pointer-events-none" />
 
           <motion.div
             initial={{ scale: 0.95, y: 15 }}
