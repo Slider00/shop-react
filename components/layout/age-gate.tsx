@@ -71,7 +71,7 @@ export function AgeGate() {
                   <Button
                     variant="outline"
                     onClick={handleDeny}
-                    className="flex-1 font-bold h-12 sm:h-10 rounded-xl border-red-500/20 text-red-400 hover:bg-red-950/20 hover:text-red-300 shadow-sm"
+                    className="flex-1 font-bold !h-14 sm:!h-12 rounded-xl border-red-500/20 text-red-400 hover:bg-red-950/20 hover:text-red-300 shadow-sm"
                   >
                     <X className="h-4 w-4 mr-2" />
                     <span>Soy menor</span>
@@ -79,7 +79,7 @@ export function AgeGate() {
                   <Button
                     variant="primary"
                     onClick={handleConfirm}
-                    className="flex-1 font-bold h-12 sm:h-10 rounded-xl shadow-lg shadow-brand/20 text-black"
+                    className="flex-1 font-bold !h-14 sm:!h-12 rounded-xl shadow-lg shadow-brand/20 text-black"
                   >
                     <Check className="h-4 w-4 mr-2 text-black" />
                     <span>Tengo 18+</span>

@@ -151,14 +151,16 @@ export function Navbar() {
       </div>
 
         {/* Barra de Advertencia Legal en la parte inferior del Header */}
-        <div className="w-full bg-red-950/45 border-t border-b border-red-500/10 py-1.5 px-6 text-center backdrop-blur-md">
-          <div className="max-w-7xl mx-auto flex items-center justify-center space-x-2 text-[8px] sm:text-[9px] font-black text-red-400 tracking-widest uppercase">
-            <span className="bg-red-500 text-black text-[7px] font-black px-1.5 py-0.5 rounded-sm select-none shrink-0">
-              +18 ADVERTENCIA
-            </span>
-            <span className="truncate sm:whitespace-normal">PRODUCTO EXCLUSIVO PARA MAYORES DE EDAD. EL CONSUMO DE CANNABIS EN MENORES DE EDAD PUEDE AFECTAR SU DESARROLLO.</span>
+        {!isMobileMenuOpen && (
+          <div className="w-full bg-red-950/45 border-t border-b border-red-500/10 py-1.5 px-6 text-center backdrop-blur-md">
+            <div className="max-w-7xl mx-auto flex items-center justify-center space-x-2 text-[8px] sm:text-[9px] font-black text-red-400 tracking-widest uppercase">
+              <span className="bg-red-500 text-black text-[7px] font-black px-1.5 py-0.5 rounded-sm select-none shrink-0">
+                +18 ADVERTENCIA
+              </span>
+              <span className="truncate sm:whitespace-normal">PRODUCTO EXCLUSIVO PARA MAYORES DE EDAD. EL CONSUMO DE CANNABIS EN MENORES DE EDAD PUEDE AFECTAR SU DESARROLLO.</span>
+            </div>
           </div>
-        </div>
+        )}
       </header>
 
       {/* Menú Móvil Lateral */}
